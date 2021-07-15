@@ -1,7 +1,11 @@
 import discord
+import os
+from dotenv import load_dotenv
 from discord.ext import commands
 import json
 
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 bot = commands.Bot(command_prefix="?")
 
 
@@ -46,4 +50,4 @@ async def update_data(users, user):
         users[user.id]["level"] = 0
 
 
-bot.run("ODYzNzM4NjY2Mjk5NTU1ODUw.YOrRUQ.SYasSPLxavwv9idPATCTKCCr6N0")
+bot.run(TOKEN)
